@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: sample-app-deployment
+spec:
+  replicas: 1 # Set to 1 replica to minimize resource usage
+  selector:
+    matchLabels:
+      app: sample-app
+  template:
+    metadata:
+      labels:
+        app: sample-app
+    spec:
+      containers:
+      - name: sample-container
+        # Placeholder image name (Jenkins will replace this)
+        image: placeholder:latest 
+        ports:
+        - containerPort: 8080
